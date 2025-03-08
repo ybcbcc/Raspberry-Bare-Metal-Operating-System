@@ -1,0 +1,25 @@
+# Raspberry Pi 4 boot configuration
+# This file should be placed at the root of your SD card
+
+# Enable 64-bit mode
+arm_64bit=1
+
+# Set the kernel image name
+kernel=kernel.img
+
+# Disable automatic loading of start.elf
+start_file=
+
+# UART configuration
+enable_uart=1
+uart_2ndstage=1
+
+# Disable overscan to use full screen
+disable_overscan=1
+
+# Boot delay to allow UART to initialize
+boot_delay=1
+
+# Display settings
+#hdmi_group=1
+#hdmi_mode=4
