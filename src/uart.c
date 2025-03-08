@@ -8,7 +8,7 @@ static void delay(uint32_t count) {
     }
 }
 
-// Initialize UART0
+// Initialize UART0,初始化串口，设置IO口的功能，设置波特率，启用FIFO
 void uart_init(void) {
     // Disable UART0
     *UART0_CR = 0;
@@ -54,7 +54,7 @@ void uart_init(void) {
     delay(150);
 }
 
-// Send a single character
+// Send a single character，发送单个字符
 void uart_putc(unsigned char c) {
     // Wait until transmit FIFO is not full
     while (*UART0_FR & UART_FR_TXFF);
@@ -68,14 +68,14 @@ void uart_putc(unsigned char c) {
     }
 }
 
-// Send a string
+// Send a string字符串
 void uart_puts(const char* str) {
     while (*str) {
         uart_putc(*str++);
     }
 }
 
-// Very simple implementation of printf (supports %s, %d, %x only)
+// Very simple implementation of printf (supports %s, %d, %x only)格式化输出
 void uart_printf(const char* fmt, ...) {
     __builtin_va_list args;
     __builtin_va_start(args, fmt);
