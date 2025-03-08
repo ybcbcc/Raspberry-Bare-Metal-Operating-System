@@ -1,3 +1,4 @@
+//两个函数实现了IO口功能选择和上/下拉控制
 #include "gpio.h"
 
 // Set GPIO pin function
