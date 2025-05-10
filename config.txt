@@ -23,3 +23,7 @@ boot_delay=1
 # Display settings
 #hdmi_group=1
 #hdmi_mode=4
+
+# 选择 DMT 模式 (PC 显示器)
+hdmi_group=2
+hdmi_mode=82  # 1920x1080 @ 60Hz
